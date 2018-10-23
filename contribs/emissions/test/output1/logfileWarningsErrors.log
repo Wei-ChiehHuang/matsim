@@ -1,0 +1,130 @@
+2018-10-19 16:00:32,261  WARN VspConfigConsistencyCheckerImpl:83 you are insisting on config v1.  vsp default is using v2.
+2018-10-19 16:00:32,261  WARN VspConfigConsistencyCheckerImpl:190 You are not setting fractionOfIterationsToStartScoreMSA; vsp default is to set this to something like 0.8.  This means you have to add the following lines to your config file: 
+2018-10-19 16:00:32,261  WARN VspConfigConsistencyCheckerImpl:192 <module name="planCalcScore">
+2018-10-19 16:00:32,261  WARN VspConfigConsistencyCheckerImpl:193 	<param name="fractionOfIterationsToStartScoreMSA" value="0.8" />
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:194 </module>
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:203 You are not removing unnecessary plan attributes; vsp default is to do that.
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:236 found `plansCalcRoute.insertingAccessEgressWalk==false'; vsp should use `true' or talk to Kai. 
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:243 found qsim.usePersonIdForMissingVehicleId==true; this is only for backwards compatibility and should rather be set to false
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:248 found `qsim.usingTravelTimeCheckInTeleporation==false'; vsp should try out `true' and report.
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:261  found 'qsim.trafficDynamics==queue'; vsp standard is`kinematicWaves'.
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:291 You have not set fractionOfIterationsToDisableInnovation; vsp default is to set this to 0.8 or similar.  Add the following config lines:
+2018-10-19 16:00:32,262  WARN VspConfigConsistencyCheckerImpl:292 <module name="strategy">
+2018-10-19 16:00:32,263  WARN VspConfigConsistencyCheckerImpl:293 	<param name="fractionOfIterationsToDisableInnovation" value="0.8" />
+2018-10-19 16:00:32,263  WARN VspConfigConsistencyCheckerImpl:294 </module>
+2018-10-19 16:01:27,641  WARN QueueWithBuffer:378 Link 609311223_0 too small: enlarge storage capacity from: 0.028366519226099656 Vehicles to: 0.04254977883914948 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-10-19 16:01:27,642  WARN QueueWithBuffer:378 Link 609311233_0 too small: enlarge storage capacity from: 0.02620306612599337 Vehicles to: 0.039304599188990055 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-10-19 16:01:27,642  WARN QueueWithBuffer:378 Link 609311240_0 too small: enlarge storage capacity from: 0.030891748375789577 Vehicles to: 0.046337622563684365 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-10-19 16:01:27,642  WARN QueueWithBuffer:378 Link 609311243_0 too small: enlarge storage capacity from: 0.027214832051341648 Vehicles to: 0.04082224807701248 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-10-19 16:01:27,722  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,723  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,724  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,724  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,724  WARN QVehicle:75 No VehicleCapacity (= maximum number of passengers) set in Vehicle. Using default value of 4.  This is only a problem if you need vehicles with different capacities, e.g. for minibuses.
+2018-10-19 16:01:27,724  WARN QVehicle:80  Future occurences of this logging statement are suppressed.
+2018-10-19 16:01:27,828 ERROR SimStepParallelEventsManagerImpl$ExceptionHandler:420 Thread class org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable0 died with exception while handling events.
+java.lang.NullPointerException
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.calculateWarmEmissions(WarmEmissionAnalysisModule.java:272)
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.checkVehicleInfoAndCalculateWarmEmissions(WarmEmissionAnalysisModule.java:181)
+	at org.matsim.contrib.emissions.WarmEmissionHandler.handleEvent(WarmEmissionHandler.java:200)
+	at org.matsim.core.events.EventsManagerImpl.callHandlerFast(EventsManagerImpl.java:288)
+	at org.matsim.core.events.EventsManagerImpl.computeEvent(EventsManagerImpl.java:222)
+	at org.matsim.core.events.EventsManagerImpl.processEvent(EventsManagerImpl.java:136)
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable.run(SimStepParallelEventsManagerImpl.java:330)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-19 16:01:27,877 ERROR AbstractController:208 Mobsim did not complete normally! afterMobsimListeners will be called anyway.
+java.lang.RuntimeException: Exception while processing events. Cannot guarantee that all events have been fully processed.
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl.finishProcessing(SimStepParallelEventsManagerImpl.java:212)
+	at org.matsim.core.mobsim.qsim.QSim.cleanupSim(QSim.java:319)
+	at org.matsim.core.mobsim.qsim.QSim.run(QSim.java:244)
+	at org.matsim.core.controler.NewControler.runMobSim(NewControler.java:126)
+	at org.matsim.core.controler.AbstractController$8.run(AbstractController.java:197)
+	at org.matsim.core.controler.AbstractController.iterationStep(AbstractController.java:229)
+	at org.matsim.core.controler.AbstractController.mobsim(AbstractController.java:193)
+	at org.matsim.core.controler.AbstractController.iteration(AbstractController.java:144)
+	at org.matsim.core.controler.AbstractController.doIterations(AbstractController.java:112)
+	at org.matsim.core.controler.AbstractController.access$100(AbstractController.java:28)
+	at org.matsim.core.controler.AbstractController$1.run(AbstractController.java:80)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:48)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:31)
+	at org.matsim.core.controler.AbstractController.run(AbstractController.java:88)
+	at org.matsim.core.controler.NewControler.run(NewControler.java:84)
+	at org.matsim.core.controler.Controler.run(Controler.java:212)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.run(RunEmissionToolOnlineExampleV2.java:69)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.main(RunEmissionToolOnlineExampleV2.java:72)
+Caused by: java.lang.NullPointerException
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.calculateWarmEmissions(WarmEmissionAnalysisModule.java:272)
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.checkVehicleInfoAndCalculateWarmEmissions(WarmEmissionAnalysisModule.java:181)
+	at org.matsim.contrib.emissions.WarmEmissionHandler.handleEvent(WarmEmissionHandler.java:200)
+	at org.matsim.core.events.EventsManagerImpl.callHandlerFast(EventsManagerImpl.java:288)
+	at org.matsim.core.events.EventsManagerImpl.computeEvent(EventsManagerImpl.java:222)
+	at org.matsim.core.events.EventsManagerImpl.processEvent(EventsManagerImpl.java:136)
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable.run(SimStepParallelEventsManagerImpl.java:330)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-19 16:01:27,880 ERROR MatsimRuntimeModifications:54 Getting uncaught Exception in Thread main
+java.lang.RuntimeException: Exception while processing events. Cannot guarantee that all events have been fully processed.
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl.finishProcessing(SimStepParallelEventsManagerImpl.java:212)
+	at org.matsim.core.mobsim.qsim.QSim.cleanupSim(QSim.java:319)
+	at org.matsim.core.mobsim.qsim.QSim.run(QSim.java:244)
+	at org.matsim.core.controler.NewControler.runMobSim(NewControler.java:126)
+	at org.matsim.core.controler.AbstractController$8.run(AbstractController.java:197)
+	at org.matsim.core.controler.AbstractController.iterationStep(AbstractController.java:229)
+	at org.matsim.core.controler.AbstractController.mobsim(AbstractController.java:193)
+	at org.matsim.core.controler.AbstractController.iteration(AbstractController.java:144)
+	at org.matsim.core.controler.AbstractController.doIterations(AbstractController.java:112)
+	at org.matsim.core.controler.AbstractController.access$100(AbstractController.java:28)
+	at org.matsim.core.controler.AbstractController$1.run(AbstractController.java:80)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:48)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:31)
+	at org.matsim.core.controler.AbstractController.run(AbstractController.java:88)
+	at org.matsim.core.controler.NewControler.run(NewControler.java:84)
+	at org.matsim.core.controler.Controler.run(Controler.java:212)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.run(RunEmissionToolOnlineExampleV2.java:69)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.main(RunEmissionToolOnlineExampleV2.java:72)
+Caused by: java.lang.NullPointerException
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.calculateWarmEmissions(WarmEmissionAnalysisModule.java:272)
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.checkVehicleInfoAndCalculateWarmEmissions(WarmEmissionAnalysisModule.java:181)
+	at org.matsim.contrib.emissions.WarmEmissionHandler.handleEvent(WarmEmissionHandler.java:200)
+	at org.matsim.core.events.EventsManagerImpl.callHandlerFast(EventsManagerImpl.java:288)
+	at org.matsim.core.events.EventsManagerImpl.computeEvent(EventsManagerImpl.java:222)
+	at org.matsim.core.events.EventsManagerImpl.processEvent(EventsManagerImpl.java:136)
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable.run(SimStepParallelEventsManagerImpl.java:330)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-19 16:01:27,882 ERROR MatsimRuntimeModifications:60 ERROR --- This is an unexpected shutdown!
+2018-10-19 16:01:27,882 ERROR MatsimRuntimeModifications:63 Shutdown possibly caused by the following Exception:
+java.lang.RuntimeException: Exception while processing events. Cannot guarantee that all events have been fully processed.
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl.finishProcessing(SimStepParallelEventsManagerImpl.java:212)
+	at org.matsim.core.mobsim.qsim.QSim.cleanupSim(QSim.java:319)
+	at org.matsim.core.mobsim.qsim.QSim.run(QSim.java:244)
+	at org.matsim.core.controler.NewControler.runMobSim(NewControler.java:126)
+	at org.matsim.core.controler.AbstractController$8.run(AbstractController.java:197)
+	at org.matsim.core.controler.AbstractController.iterationStep(AbstractController.java:229)
+	at org.matsim.core.controler.AbstractController.mobsim(AbstractController.java:193)
+	at org.matsim.core.controler.AbstractController.iteration(AbstractController.java:144)
+	at org.matsim.core.controler.AbstractController.doIterations(AbstractController.java:112)
+	at org.matsim.core.controler.AbstractController.access$100(AbstractController.java:28)
+	at org.matsim.core.controler.AbstractController$1.run(AbstractController.java:80)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:48)
+	at org.matsim.core.controler.MatsimRuntimeModifications.run(MatsimRuntimeModifications.java:31)
+	at org.matsim.core.controler.AbstractController.run(AbstractController.java:88)
+	at org.matsim.core.controler.NewControler.run(NewControler.java:84)
+	at org.matsim.core.controler.Controler.run(Controler.java:212)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.run(RunEmissionToolOnlineExampleV2.java:69)
+	at org.matsim.contrib.emissions.example.RunEmissionToolOnlineExampleV2.main(RunEmissionToolOnlineExampleV2.java:72)
+Caused by: java.lang.NullPointerException
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.calculateWarmEmissions(WarmEmissionAnalysisModule.java:272)
+	at org.matsim.contrib.emissions.WarmEmissionAnalysisModule.checkVehicleInfoAndCalculateWarmEmissions(WarmEmissionAnalysisModule.java:181)
+	at org.matsim.contrib.emissions.WarmEmissionHandler.handleEvent(WarmEmissionHandler.java:200)
+	at org.matsim.core.events.EventsManagerImpl.callHandlerFast(EventsManagerImpl.java:288)
+	at org.matsim.core.events.EventsManagerImpl.computeEvent(EventsManagerImpl.java:222)
+	at org.matsim.core.events.EventsManagerImpl.processEvent(EventsManagerImpl.java:136)
+	at org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable.run(SimStepParallelEventsManagerImpl.java:330)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-19 16:01:27,885 ERROR MatsimRuntimeModifications:78 ERROR --- MATSim unexpectedly terminated. Please check the output or the logfile with warnings and errors for hints.
+2018-10-19 16:01:27,885 ERROR MatsimRuntimeModifications:79 ERROR --- results should not be used for further analysis.
+2018-10-19 16:01:27,886 ERROR MatsimRuntimeModifications:83 ERROR --- This was an unexpected shutdown! See the log file for a possible reason.

@@ -27,6 +27,8 @@ import org.matsim.core.config.groups.PlanCalcScoreConfigGroup.ActivityParams;
 import org.matsim.core.config.groups.StrategyConfigGroup.StrategySettings;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.MatsimServices;
+import org.matsim.core.controler.OutputDirectoryHierarchy;
+import org.matsim.core.mobsim.qsim.QSim;
 
 /**
  * 
@@ -41,20 +43,20 @@ import org.matsim.core.controler.MatsimServices;
  */
 public class CreateEmissionConfig {
 
-		private static final String inputPath = "./test/input/org/matsim/contrib/emissions/";
-		private static final String networkFile = //inputPath + 
-				"sample_network.xml";
-		private static final String plansFile = //inputPath + 
-				"sample_population.xml";
-		private static final String emissionVehicleFile = //inputPath + 
-				"sample_emissionVehicles.xml";
-		
-		private static final String roadTypeMappingFile = //inputPath +
+		private static final String inputPath = "C:/Users/Wei/Documents/matsim/contribs/emissions/test/input/org/matsim/contrib/emissions/";
+		//private static final String inputPath = "./test/input/org/matsim/contrib/emissions/";
+		private static final String networkFile = inputPath +
+				"sample_network_MUC.xml";
+		private static final String plansFile = inputPath +
+				"sample_population_MUC.xml";
+		private static final String emissionVehicleFile = inputPath +
+				"sample_emissionVehicles_MUC.xml";
+		private static final String roadTypeMappingFile = inputPath +
 				"sample_roadTypeMapping.txt";
 		
-		private static final String averageFleetWarmEmissionFactorsFile = //inputPath +
+		private static final String averageFleetWarmEmissionFactorsFile = inputPath +
 				"sample_EFA_HOT_vehcat_2005average.txt";
-		private static final String averageFleetColdEmissionFactorsFile = //inputPath +
+		private static final String averageFleetColdEmissionFactorsFile = inputPath +
 				"sample_EFA_ColdStart_vehcat_2005average.txt";
 		
 		private static final boolean isUsingDetailedEmissionCalculation = true;
@@ -63,10 +65,10 @@ public class CreateEmissionConfig {
 		private static final String detailedColdEmissionFactorsFile = //inputPath +
 			 	"sample_EFA_ColdStart_SubSegm_2005detailed.txt";
 		
-		private static final String outputPath = "./test/output/";
-		private static final String configFilePath = inputPath + "config_v2.xml";
-		
-		private static final int numberOfIterations = 6;
+		private static final String outputPath = "C:/Users/Wei/Documents/matsim/contribs/emissions/test/output/";
+		private static final String configFilePath = inputPath + "config_v21.xml";
+		//private static final String configFilePath = "C:/Users/Wei/Documents/matsim/contribs/emissions/test/input/org/matsim/contrib/emissions/config_v2.xml";
+		private static final int numberOfIterations = 11;
 		
 		
 		public static void main(String[] args) {
@@ -80,22 +82,37 @@ public class CreateEmissionConfig {
 			ccg.setOutputDirectory(outputPath);
 			ccg.setFirstIteration(0);
 			ccg.setLastIteration(numberOfIterations-1);
-			
+			ccg.setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
+			ccg.setMobsim("qsim");
+
+		//Mobsim
+			QSimConfigGroup qcg = controler.getConfig().qsim();
+			qcg.setFlowCapFactor(0.01);
+			qcg.setStorageCapFactor(0.01);
+			qcg.setEndTime(0);
+			qcg.setStartTime(30*60*60);
+
 		// planCalcScoreConfigGroup
 			PlanCalcScoreConfigGroup pcs = controler.getConfig().planCalcScore();
-			ActivityParams homeP = new ActivityParams("home");
-			homeP.setTypicalDuration(12 * 3600);
-			pcs.addActivityParams(homeP);
-			ActivityParams workP = new ActivityParams("work");
-			workP.setTypicalDuration(8 * 3600);
-			pcs.addActivityParams(workP);
+			ActivityParams home = new ActivityParams("home");
+			home.setTypicalDuration(12 * 60*60);
+			pcs.addActivityParams(home);
+			ActivityParams work = new ActivityParams("work");
+			work.setTypicalDuration(8 * 60*60);
+			pcs.addActivityParams(work);
 
 		// strategy
 			StrategyConfigGroup scg = controler.getConfig().strategy();
-			StrategySettings strategySettings = new StrategySettings();
-			strategySettings.setStrategyName("ChangeExpBeta");
-			strategySettings.setWeight(1.0);
-			scg.addStrategySettings(strategySettings);
+			StrategySettings strat1 = new StrategySettings();
+			strat1.setStrategyName("ChangeExpBeta");
+			strat1.setWeight(0.9);
+			scg.addStrategySettings(strat1);
+
+			StrategySettings strat2 = new StrategySettings();
+			strat2.setStrategyName("Re-route");
+			strat2.setWeight(0.1);
+			scg.addStrategySettings(strat2);
+			scg.setFractionOfIterationsToDisableInnovation(0.9);
 			
 		// network
 			NetworkConfigGroup ncg = controler.getConfig().network();
