@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <vehicleDefinitions xmlns="http://www.matsim.org/files/dtd"
@@ -17,7 +16,7 @@
 	</vehicleType>
 	<vehicleType id="car_petrol">
 		<description>
-			BEGIN_EMISSIONSPASSENGER_CAR;petrol (4S);>=2L;PC-P-Euro-1END_EMISSIONS
+			BEGIN_EMISSIONSPASSENGER_CAR;petrol (4S);&lt;1,4L;PC-P-Euro-1END_EMISSIONS
 		</description>
 		<length meter="7.5"/>
 		<width meter="1.0"/>

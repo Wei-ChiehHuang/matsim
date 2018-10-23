@@ -12,7 +12,7 @@
 		<!-- Default=1000;  -->
 		<param name="lastIteration" value="10" />
 
-		<param name="outputDirectory" value="C:/Users/Wei/Documents/matsim/contribs/emissions/test/output1/" />
+		<param name="outputDirectory" value="C:/Users/Wei/Documents/matsim/contribs/emissions/test/output2/" />
 		<param name="overwriteFiles" value="deleteDirectoryIfExists" />
 
 		<!-- iterationNumber % writeEventsInterval == 0 defines in which iterations events are written to a file. `0' disables events writing completely. -->
@@ -30,19 +30,19 @@
 	<module name="emissions" >
 
 		<!-- REQUIRED: file with HBEFA 3.1 fleet average cold emission factors -->
-		<param name="averageFleetColdEmissionFactorsFile" value="sample_EFA_ColdStart_vehcat_2005average.txt" />
+		<param name="averageFleetColdEmissionFactorsFile" value="sample_EFA_ColdStart_vehcat_2010average.txt" />
 
 		<!-- REQUIRED: file with HBEFA 3.1 fleet average warm emission factors -->
-		<param name="averageFleetWarmEmissionFactorsFile" value="EFA_HOT_Vehcat_Warm2010_average.txt" />
+		<param name="averageFleetWarmEmissionFactorsFile" value="sample_EFA_HOT_vehcat_2010average.txt" />
 
 		<!-- if true, only flat emissions will be considered irrespective of pricing either flat air pollution or exposure of air pollution. -->
 		<param name="consideringCO2Costs" value="true" />
 
 		<!-- OPTIONAL: file with HBEFA 3.1 detailed cold emission factors -->
-		<param name="detailedColdEmissionFactorsFile" value="sample_EFA_ColdStart_SubSegm_2005detailed.txt" />
+		<param name="detailedColdEmissionFactorsFile" value="sample_EFA_coldStart_SubSegm_2010detailed.txt" />
 
 		<!-- OPTIONAL: file with HBEFA 3.1 detailed warm emission factors -->
-		<param name="detailedWarmEmissionFactorsFile" value="sample_EFA_HOT_SubSegm_2005detailed.txt" />
+		<param name="detailedWarmEmissionFactorsFile" value="sample_EFA_HOT_SubSegm_2010detailed1.txt" />
 
 		<!-- A factor, by which the emission cost factors from literature (Maibach et al. (2008)) are increased. -->
 		<param name="emissionCostMultiplicationFactor" value="1.0" />
@@ -108,6 +108,8 @@
 	<!-- ====================================================================== -->
 
 	<module name="planCalcScore" >
+
+		<param name="fractionOfIterationsToStartScoreMSA" value="0.8" />
 
 		<!-- [utils/hr] utility for arriving late (i.e. after the latest start time).  normally negative -->
 		<param name="lateArrival" value="-18.0" />
@@ -286,6 +288,9 @@
 	<!-- ====================================================================== -->
 
 	<module name="strategy" >
+
+		<param name="fractionOfIterationsToDisableInnovation" value="0.8" />
+
 
 		<!-- fraction of iterations where innovative strategies are switched off.  Something link 0.8 should be good.  E.g. if you run from iteration 400 to iteration 500, innovation is switched off at iteration 480 -->
 		<param name="fractionOfIterationsToDisableInnovation" value="Infinity" />
